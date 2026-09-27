@@ -224,11 +224,3 @@ y cargador de imágenes mediante mocks (`tests/conftest.py`) — corren sin red,
 GPU y sin archivos PDF reales. Cubren: orquestación de ingesta, manejo de errores,
 consulta con y sin contexto suficiente, detección de intención visual, límite de
 imágenes por consulta, e imágenes no encontradas en disco.
-
-## Posibles mejoras (fuera de alcance por tiempo)
-
-- Migrar `JobStore` en memoria a Redis para persistencia entre reinicios y escalado horizontal
-- Circuit Breaker explícito (además del retry) para cortar llamadas al LLM tras fallos consecutivos
-- Re-ranker dedicado (ej. Cohere Rerank o cross-encoder local) en vez de pesos fijos en la búsqueda híbrida
-- Chunking semántico basado en embeddings de oraciones en vez de bloques de layout puro
-- Detección de intención visual con embeddings en vez de palabras clave (más robusto ante frases sin esas palabras exactas)
